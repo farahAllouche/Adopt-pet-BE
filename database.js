@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-require('dotenv').config()
 
 
 console.log("url", process.env.DATABASE_URL);
