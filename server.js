@@ -8,7 +8,8 @@ const PetRouter =require('./Pet/pet.router')
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-const PORT = 4000
+const PORT =  process.env.PORT || 4000
+
 
 app.use(
     cors({
