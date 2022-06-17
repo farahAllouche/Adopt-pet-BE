@@ -15,6 +15,7 @@ function loginHandler (req, res) {
             return res.status(401).send({message : "Invalid email or password"});
         }
         const {accessToken, refreshToken} = login({name : user.name, userId :  user.id});
+        console.log("accessToken", accessToken);
           
           res.cookie("accessToken", accessToken, {
               maxAge: 3.154e10, // 2 hours
