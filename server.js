@@ -15,7 +15,7 @@ const PORT =  process.env.PORT || 4000
 app.use(
     cors({
       credentials: true,
-      origin: "https://reliable-kitten-e91b98.netlify.app/",
+      origin: "http://localhost:3000",
     })
   );
 
