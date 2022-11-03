@@ -15,7 +15,7 @@ const PORT =  process.env.PORT || 4000
 app.use(
     cors({
       credentials: true,
-      origin: "https://glittery-queijadas-ca1b16.netlify.app/",
+      origin: "*",
     })
   );
 
