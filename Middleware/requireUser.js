@@ -1,6 +1,6 @@
 function requireUser(req, res, next) {
 
-  console.log("user" , req.user);
+  //console.log("user" , req.user);
 
     if (!req.user) {
       

@@ -15,7 +15,7 @@ function loginHandler (req, res) {
             return res.status(401).send({message : "Invalid email or password"});
         }
         const {accessToken, refreshToken} = login({name : user.name, userId :  user.id});
-        console.log("accessToken", accessToken);
+        //console.log("accessToken", accessToken);
           
           res.cookie("accessToken", accessToken, {
               maxAge: 3.154e10, // 2 hours
@@ -70,7 +70,7 @@ function registerHandler (req, res) {
 
 function logoutHandler (req , res) {
     const { accessToken, refreshToken } = req.cookies;
-    console.log(accessToken, refreshToken);
+    //console.log(accessToken, refreshToken);
     logout(refreshToken).then(()=> {
         res.cookie("accessToken", "", {
             maxAge: 0,
@@ -90,14 +90,14 @@ function logoutHandler (req , res) {
 
 }
  function getSessionHandler(req, res) {
-     console.log("seesion", req.user);
+     //console.log("seesion", req.user);
     return res.send({...req.user});
 }
 
 function getUserInfoHandler (req, res) {
-    console.log("userhandler");
+    //console.log("userhandler");
     const {userId} = req.user
-    console.log(userId);
+    //console.log(userId);
     getUserInfo(userId).then((user)=> {
         res.send(user)
     })
@@ -108,7 +108,7 @@ function getUserInfoHandler (req, res) {
 
 function getUserHandler (req, res) {
     const {userId} = req.body
-    console.log(userId);
+    //console.log(userId);
     getUserInfo(userId).then((user)=> {
         res.send(user)
     })
@@ -121,7 +121,7 @@ function getUserHandler (req, res) {
 function updateUserInerest (req, res) {
     const {userId} = req.user
     const {fav} = req.body
-    console.log("userId", userId);
+    //console.log("userId", userId);
     intrestedIn(userId, fav).then((user)=> {
         res.send(user)
     })

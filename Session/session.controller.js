@@ -8,7 +8,7 @@ function saveRefreshToken (refreshToken) {
 
 function checkRefreshToken (refreshToken) {
    return refreshToken && RefreshToken.findOne({token : refreshToken}).then((token) => {
-     console.log(token);
+     //console.log(token);
     return token ? token.token : null})
     
 }
@@ -38,7 +38,7 @@ function getUser(email) {
   function getUserInfo (userId) {
 
     return User.findOne({_id : userId}).then((user)=>{
-        console.log(user);
+        //console.log(user);
         return user
     })
 }
@@ -47,7 +47,7 @@ function getUser(email) {
 
 function updateUserInfo (userId, userDetails) {
 
-  console.log("userDetails", userDetails);
+  //console.log("userDetails", userDetails);
 
     return User.findOneAndUpdate({_id :userId}, userDetails,{new :true}).then((user)=> {
 
@@ -75,7 +75,7 @@ function register(userDetails) {
       const refreshToken = signJWT({name : user.name, userId :  user.id}, "1y")
       saveRefreshToken(refreshToken)
 
-      console.log();
+      //console.log();
     
       return { accessToken: accessToken, refreshToken: refreshToken,userId :  user.id }
        

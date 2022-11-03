@@ -5,6 +5,7 @@ require('./database')
 const { deserializeUser } = require('./Middleware/deserializeUser')
 const SessionRouter =require('./Session/session.router')
 const PetRouter =require('./Pet/pet.router')
+const LostPetRouter =require('./LostPet/lost.router')
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
@@ -24,6 +25,8 @@ app.use(
   
 app.use('/', SessionRouter)
 app.use('/pets', PetRouter)
+app.use('/lostPet', LostPetRouter)
+
 
 app.listen(PORT, ()=>{
 

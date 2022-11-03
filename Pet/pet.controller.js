@@ -20,7 +20,6 @@ function getPet (petId) {
 }
 
 function getAllPet () {
-    console.log();
     return Pet.find().then((pets) => {
         
         return pets

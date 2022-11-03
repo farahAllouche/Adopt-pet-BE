@@ -13,7 +13,7 @@ function deserializeUser (req, res, next) {
         return next();
       }
       const { payload : user, expired } = verifyJWT(accessToken);
-      console.log('user', expired);
+      //console.log('user', expired);
       if (user) {
           req.user = {name : user.name, userId : user.userId};
           return next();
