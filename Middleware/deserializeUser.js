@@ -32,6 +32,8 @@ function deserializeUser(req, res, next) {
       res.cookie("accessToken", newAccessToken, {
         maxAge: 3.154e10,
         httpOnly: true,
+        secure: true, // Ensures the cookie is sent over HTTPS
+        sameSite: "None",
       });
 
       req.user = { name: newUser.name, userId: newUser.userId };
